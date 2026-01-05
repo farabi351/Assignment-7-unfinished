@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "title": "Login Issues - Can't Access Account",
+    "description": "User reports being unable to log in with correct credentials.",
+    "customer": "John Doe",
+    "priority": "High Priority",
+    "status": "In-Progress",
+    "createdAt": "2025-01-05"
+  },
+  {
+    "id": 2,
+    "title": "Password Reset Email Not Received",
+    "description": "Customer did not receive password reset email.",
+    "customer": "Sarah Smith",
+    "priority": "Medium Priority",
+    "status": "Open",
+    "createdAt": "2025-01-06"
+  },
+  {
+    "id": 3,
+    "title": "Website Loading Slowly",
+    "description": "Pages take more than 10 seconds to load.",
+    "customer": "Michael Brown",
+    "priority": "Low Priority",
+    "status": "Open",
+    "createdAt": "2025-01-07"
+  },
+  {
+    "id": 4,
+    "title": "Payment Failed During Checkout",
+    "description": "Payment gateway returns an error on checkout.",
+    "customer": "Emily Johnson",
+    "priority": "High Priority",
+    "status": "In-Progress",
+    "createdAt": "2025-01-08"
+  },
+  {
+    "id": 5,
+    "title": "Account Suspended Without Notice",
+    "description": "User claims account was suspended unexpectedly.",
+    "customer": "David Wilson",
+    "priority": "High Priority",
+    "status": "Open",
+    "createdAt": "2025-01-09"
+  },
+  {
+    "id": 6,
+    "title": "Unable to Upload Profile Picture",
+    "description": "Image upload fails with validation error.",
+    "customer": "Olivia Martinez",
+    "priority": "Low Priority",
+    "status": "Open",
+    "createdAt": "2025-01-10"
+  },
+  {
+    "id": 7,
+    "title": "Two-Factor Authentication Not Working",
+    "description": "OTP code is not being delivered to the phone.",
+    "customer": "Daniel Anderson",
+    "priority": "High Priority",
+    "status": "In-Progress",
+    "createdAt": "2025-01-11"
+  },
+  {
+    "id": 8,
+    "title": "Incorrect Billing Amount",
+    "description": "Invoice shows incorrect billing amount.",
+    "customer": "Sophia Thomas",
+    "priority": "Medium Priority",
+    "status": "Open",
+    "createdAt": "2025-01-12"
+  },
+  {
+    "id": 9,
+    "title": "Notification Emails Delayed",
+    "description": "System emails arrive several hours late.",
+    "customer": "James Taylor",
+    "priority": "Low Priority",
+    "status": "Open",
+    "createdAt": "2025-01-13"
+  },
+  {
+    "id": 10,
+    "title": "Error 500 on Dashboard",
+    "description": "Internal server error appears on dashboard page.",
+    "customer": "Isabella Moore",
+    "priority": "High Priority",
+    "status": "In-Progress",
+    "createdAt": "2025-01-14"
+  },
+  {
+    "id": 11,
+    "title": "Search Function Not Returning Results",
+    "description": "Search returns empty results for valid queries.",
+    "customer": "William Jackson",
+    "priority": "Medium Priority",
+    "status": "Open",
+    "createdAt": "2025-01-15"
+  },
+  {
+    "id": 12,
+    "title": "Unable to Download Report",
+    "description": "CSV export fails with a timeout error.",
+    "customer": "Ava White",
+    "priority": "Medium Priority",
+    "status": "In-Progress",
+    "createdAt": "2025-01-16"
+  },
+  {
+    "id": 13,
+    "title": "UI Misalignment on Mobile",
+    "description": "Buttons overlap on small screen devices.",
+    "customer": "Benjamin Harris",
+    "priority": "Low Priority",
+    "status": "Open",
+    "createdAt": "2025-01-17"
+  },
+  {
+    "id": 14,
+    "title": "Session Timeout Too Short",
+    "description": "Users are logged out after a few minutes of inactivity.",
+    "customer": "Mia Clark",
+    "priority": "Medium Priority",
+    "status": "Open",
+    "createdAt": "2025-01-18"
+  },
+  {
+    "id": 15,
+    "title": "Data Sync Failure",
+    "description": "User data not syncing across devices.",
+    "customer": "Ethan Lewis",
+    "priority": "High Priority",
+    "status": "Open",
+    "createdAt": "2025-01-19"
+  }
+]
