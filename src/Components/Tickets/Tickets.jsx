@@ -1,98 +1,61 @@
-import React, { Suspense, use,useState} from 'react';
+import React, { Suspense, use} from 'react';
 
 import TaskStatus from '../Task Status/TaskStatus';
 import Ticket from '../Tickets/Ticket/Ticket';
-import Banner from '../Banner/Banner';
+
 
 //ticketPromise
-const Tickets = ({tick,ticketPromise}) => {
+const Tickets = ({ticketPromise,myTickets,setMyTickets,resolved,setResolved,count,setCount}) => {
 
- // console.log(ticketPromise);
-
- console.log(tick);
+   const ticketData=use(ticketPromise);
 
 
- const [myTickets,setMyTickets]=useState([]);
-        
-    //handle function for handling tickets  
-    const handleVisitedTickets=(tick)=>{
+
+   const handleVisitedTickets=(tick)=>{
     
         console.log("Visited individual  tickets Array",tick)
     
         const newVisitedTickets=[...myTickets,tick]
         console.log(newVisitedTickets,"my ticket is an empty array, and tick is individual click,this way we can create an array of clicked items");
         console.log(newVisitedTickets.length,"i am just counting the number things inside the array");
+        const exists = myTickets.some(t => t.id === tick.id);
+        if (exists) return;
         setMyTickets(newVisitedTickets);
-        console.log(newVisitedTickets);
+        console.log(newVisitedTickets.title);
+        console.log(myTickets);
+        //handleTicketCount(tick);
+        
     
       }
- 
- 
-     const [title,setTitle]=useState([]);
- 
- 
- 
- 
-  const handleVisitedInProgress = (tick) => {
-     setTitle([...title,tick.title]);
-     console.log(title);
-   };
- 
- 
-    const [count,setCount]=useState(0);
-       //  const handleTicketCount=(tick)=>{
-       //       const newCount=count+1;
-       //       setCount(newCount);
-            
- 
-            
-            
-         
-       // //   //this is function that is to be called inside another function
-       //     handleVisitedTickets(tick);
-       //     handleVisitedInProgress(tick);
- 
- 
-       // }
- 
-       const handleTicketCount = (tick) => {
-   setCount(prev => prev + 1);
-   handleVisitedTickets(tick);
-   handleVisitedInProgress(tick);
- };
- 
- 
- 
- 
- 
- 
-     const [resolved,setResolved]=useState([]);
- 
- 
-         // import tick here from ticket 
-     //     const handleVisitedResolvedTask=(t)=>{
-     //        console.log(t);
-     //        const myVal=([...resolved,title]);
-     //        console.log(myVal);
-     //        setResolved(myVal);
-         
- 
-     //    }
- 
- 
- 
-     const handleVisitedResolvedTask = (t) => {
-   // add ONE item to resolved
-   setResolved(prev => [...prev, t]);
- 
-   // remove that ONE item from in-progress
-   setTitle(prev => prev.filter(t => t !== t));
- };
- 
- 
 
 
- 
+    //  const handleTicketCount=(tick)=>{
+
+    //    const mycount=[...count,tick]
+    //    setCount(mycount);
+    //    console.log(mycount);
+    //  }
+
+    //  console.log(mycount);
+
+
+  
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+
+
+     
+    
 
 
 
@@ -100,16 +63,14 @@ const Tickets = ({tick,ticketPromise}) => {
 
 
 
-//use function to read data   
-//const ticketData=use(ticketPromise)
-
-
-
-   
+  
    
 
 
 
+  
+
+ 
 
 
 
@@ -154,9 +115,10 @@ const Tickets = ({tick,ticketPromise}) => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
 
                       {/* handleTicketCount={handleTicketCount} */}
+                      {/* key={tick.id} tick={tick} myTickets={myTickets} setMyTickets={setMyTickets} count={count} setCount={setCount} title={title} setTitle={setTitle} */}
 
                        {
-                        ticketData.map(tick=> <Ticket key={tick.id} tick={tick} handleVisitedTickets={handleVisitedTickets} handleVisitedInProgress={handleVisitedInProgress} handleTicketCount={handleTicketCount}></Ticket>
+                         ticketData.map(tick=><Ticket key={tick.id} tick={tick} myTickets={myTickets} setMyTickets={setMyTickets} handleVisitedTickets={handleVisitedTickets} count={count} setCount={setCount}></Ticket>
 
                          
 
@@ -179,8 +141,8 @@ const Tickets = ({tick,ticketPromise}) => {
                     </div>
        
                     <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
-                          <TaskStatus ticketData={ticketData} handleVisitedTickets={handleVisitedTickets} myTickets={myTickets} title={title}> setTitle={setTitle} resolved={resolved} handleVisitedResolvedTask={handleVisitedResolvedTask} count={count} handleTicketCount={handleTicketCount}</TaskStatus>
-                    </Suspense>  
+                          <TaskStatus handleVisitedTickets={handleVisitedTickets} myTickets={myTickets} resolved={resolved} setResolved={setResolved}></TaskStatus>
+                    </Suspense>   
 
                      
 

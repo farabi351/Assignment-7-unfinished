@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+
 
  const ResolvedTask = ({resolved}) => {
 
- console.log(resolved);
+
+   console.log(resolved);
+
+ 
 
      
      
@@ -14,12 +17,12 @@ import React, { useState } from 'react';
                     <p className='text-[#627382]'>No Resolved tasks yet</p>
 
                     
-                    {
+                     {
                           resolved.map(t=>
                             <div className='flex-start bg-blue-200 m-2 p-0.5'>
-                               <h1 className='font-semibold text-2xl border-2 border-cyan-100'>{t}</h1>
+                               <h1 className='font-semibold text-2xl border-2 border-cyan-100'>{t.title}</h1>
                             </div>)
-                    }
+                    } 
 
 
 
@@ -33,15 +36,4 @@ import React, { useState } from 'react';
 
 
 
-                            //   {
-                            //              title.map(t =>
-                                         
-                            //              <div className='p-2 m-1 border-2 border-red-500'>
-                            //                       <h1 className='font-semibold mb-2'>{t}</h1>
-                            //                       <button onClick={handleVisitedResolvedTask}  className='w-full bg-[#02A53B] text-white font-bold'>Continue</button>
-                            //              </div>
-
-
-                                            
-                            //              )
-                            //    }
+                           

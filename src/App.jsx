@@ -12,6 +12,8 @@ import Footer from './Components/Footer/Footer'
 import TaskStatus from './Components/Task Status/TaskStatus'
 import { Suspense} from 'react'
 import { use } from 'react'
+import { useState } from 'react'
+//import { ToastContainer } from 'react-toastify';
 
 
 const fetchTicket=async()=>{
@@ -19,12 +21,25 @@ const fetchTicket=async()=>{
   return res.json()
 }
 
+const ticketPromise=fetchTicket();
+
 
 
 
 function App() {
 
-  const ticketPromise=fetchTicket();
+  const [count,setCount]=useState(0);
+  
+  
+  const [myTickets,setMyTickets]=useState([]);
+
+  const [title,setTitle]=useState([]);
+
+  const [resolved,setResolved]=useState([]);
+
+  
+
+
 
   
   
@@ -34,30 +49,28 @@ function App() {
 
    
 
-    {/* I HAVE SPLIT THEM INTO FOUR COMPONENTS */}
+  
 
     <Navbar></Navbar>
     
 
     
     
-   <Suspense>
-          <Banner></Banner>
-   </Suspense> 
+      <Banner count={count} setCount={setCount}></Banner> 
    
      
-    {/* <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
-          <Tickets ticketPromise={ticketPromise}></Tickets>
-    </Suspense>      */}
+     <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
+          <Tickets ticketPromise={ticketPromise} myTickets={myTickets} setMyTickets={setMyTickets} title={title} setTitle={setTitle} resolved={resolved} setResolved={setResolved} count={count} setCount={setCount}></Tickets>
+    </Suspense>       
 
   
     
 
-     {/* <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
-          <TaskStatus></TaskStatus>
-    </Suspense> */}
+     
 
     <Footer></Footer>
+
+    {/* <ToastContainer></ToastContainer> */}
 
 
 

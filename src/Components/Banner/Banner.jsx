@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
 import img from "../Banner/../../assets/vector1.png"
 import Tickets from "../Tickets/Tickets";
-import { use } from 'react';
+import { Suspense, useState } from "react";
 
 
-const Banner = ({ticketPromise,tick}) => {
+
+
+
+const Banner = (count,setCount) => {
+
+
+
+
+
+       
+ 
+
    
-    //  const data=use(ticketPromise);
-    //  console.log(data);
+    
+   
+    
 
    
 
@@ -37,7 +48,7 @@ const Banner = ({ticketPromise,tick}) => {
                      />  */}
         
                       <h1 className='text-white font-semibold text-2xl'>In-Progress</h1>
-                      <p className='text-white text-5xl font-bold'>{count}</p>
+                      <p className='text-white text-5xl font-bold'>0</p>
                       {/* <button onClick={handleAdd}></button> */}
         
               </div> 
@@ -60,10 +71,11 @@ const Banner = ({ticketPromise,tick}) => {
                     <p className='text-white text-5xl font-bold'>0 {}</p>
 
                     
-
+                    
+                    {/* <Tickets count={count} setCount={setCount} myTickets={myTickets} setMyTickets={setMyTickets} title={title} setTitle={setTitle}></Tickets> 
+               */}
         
-              
-        
+                    
               </div> 
         
         

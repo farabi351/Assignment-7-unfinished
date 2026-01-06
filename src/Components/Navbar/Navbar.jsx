@@ -1,19 +1,12 @@
-import React from 'react';
-import { use } from 'react';
-import Banner from '../Banner/Banner';
+
 
 const Navbar = () => {
 
-  //  const data=use(ticketPromise);
-  //  console.log(data);
+  
 
    
 
-     
-
-   
-
-       
+          
 
     return (
 

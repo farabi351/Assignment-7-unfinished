@@ -2,12 +2,17 @@ import React from 'react';
 import online from "../../../assets/online.png"
 import calander from "../../../assets/calander.png"
 import inProgress from "../../../assets/In-progress.png"
-import { useState } from 'react'
+import { useState } from 'react';
 
-const Ticket = ({tick,handleVisitedTickets,handleVisitedInProgress,count,handleTicketCount}) => {
-    
-    
-     const priorityColor = {
+
+
+const Ticket = ({tick,handleVisitedTickets}) => {
+
+   
+
+
+
+ const priorityColor = {
     "High Priority": "text-red-600",
     "Medium Priority": "text-yellow-500",
     "Low Priority": "text-green-500",
@@ -25,42 +30,24 @@ const Ticket = ({tick,handleVisitedTickets,handleVisitedInProgress,count,handleT
       width:"w-[120px]",
   },
 
-//    const [myTickets,setMyTickets]=useState([]);
-       
-//    //handle function for handling tickets  
-//    const handleVisitedTickets=(tick)=>{
-   
-//        console.log("Visited individual  tickets Array",tick)
-   
-//        const newVisitedTickets=[...myTickets,tick]
-//        console.log(newVisitedTickets,"my ticket is an empty array, and tick is individual click,this way we can create an array of clicked items");
-//        console.log(newVisitedTickets.length,"i am just counting the number things inside the array");
-//        setMyTickets(newVisitedTickets);
-   
-//      }
+
 
 };
 
+
+
+
+
+
+
+
+
+
  
-
-
-    // const [title,setTitle]=useState([]);
-
-    // // const handleTitle=()=>{
-    // //     console.log("i am inside from setTitle");
-    // // }
-
-    //console.log(tick.title);
-
-    
-    
-    
-    
-    
     
     
     return (
-              <div onClick={handleTicketCount}  className=' border- border-red-500 bg-white md:m-2 shadow-xl'>
+              <div onClick={() => handleVisitedTickets(tick)}  className=' border- border-red-500 bg-white md:m-2 shadow-xl'>
             
                              
                                 {/* <button> {tick.title} Test Button</button>   */}
