@@ -2,10 +2,11 @@ import React, { Suspense, use} from 'react';
 
 import TaskStatus from '../Task Status/TaskStatus';
 import Ticket from '../Tickets/Ticket/Ticket';
+import { toast } from 'react-toastify';
 
 
 //ticketPromise
-const Tickets = ({ticketPromise,myTickets,setMyTickets,resolved,setResolved,count,setCount}) => {
+const Tickets = ({ticketPromise,myTickets,setMyTickets,resolved,setResolved,count,setCount,resCount,setResCount,removeTask,removeTicket}) => {
 
    const ticketData=use(ticketPromise);
 
@@ -13,29 +14,36 @@ const Tickets = ({ticketPromise,myTickets,setMyTickets,resolved,setResolved,coun
 
    const handleVisitedTickets=(tick)=>{
     
-        console.log("Visited individual  tickets Array",tick)
+        //console.log("Visited individual  tickets Array",tick)
     
         const newVisitedTickets=[...myTickets,tick]
-        console.log(newVisitedTickets,"my ticket is an empty array, and tick is individual click,this way we can create an array of clicked items");
-        console.log(newVisitedTickets.length,"i am just counting the number things inside the array");
+        //console.log(newVisitedTickets,"my ticket is an empty array, and tick is individual click,this way we can create an array of clicked items");
+        //console.log(newVisitedTickets.length,"i am just counting the number things inside the array");
         const exists = myTickets.some(t => t.id === tick.id);
         if (exists) return;
         setMyTickets(newVisitedTickets);
-        console.log(newVisitedTickets.title);
-        console.log(myTickets);
-        //handleTicketCount(tick);
+        //console.log(newVisitedTickets.title);
+        //console.log(myTickets);
+        handleTicketCount(tick);
+        removeTicket(tick);
+        
+        
         
     
       }
 
 
-    //  const handleTicketCount=(tick)=>{
+      const handleTicketCount=()=>{
 
-    //    const mycount=[...count,tick]
-    //    setCount(mycount);
-    //    console.log(mycount);
-    //  }
+        const counter=count+1;
+        toast("You have selected an item to work with");
+        setCount(counter);
+        //console.log(counter);
+        
+      }
 
+
+      
     //  console.log(mycount);
 
 
@@ -118,7 +126,7 @@ const Tickets = ({ticketPromise,myTickets,setMyTickets,resolved,setResolved,coun
                       {/* key={tick.id} tick={tick} myTickets={myTickets} setMyTickets={setMyTickets} count={count} setCount={setCount} title={title} setTitle={setTitle} */}
 
                        {
-                         ticketData.map(tick=><Ticket key={tick.id} tick={tick} myTickets={myTickets} setMyTickets={setMyTickets} handleVisitedTickets={handleVisitedTickets} count={count} setCount={setCount}></Ticket>
+                         ticketData.map(tick=><Ticket key={tick.id} tick={tick} myTickets={myTickets} setMyTickets={setMyTickets} handleVisitedTickets={handleVisitedTickets} count={count} setCount={setCount} handleTicketCount={handleTicketCount} removeTask={removeTask} removeTicket={removeTicket}></Ticket>
 
                          
 
@@ -141,7 +149,7 @@ const Tickets = ({ticketPromise,myTickets,setMyTickets,resolved,setResolved,coun
                     </div>
        
                     <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
-                          <TaskStatus handleVisitedTickets={handleVisitedTickets} myTickets={myTickets} resolved={resolved} setResolved={setResolved}></TaskStatus>
+                          <TaskStatus handleVisitedTickets={handleVisitedTickets} myTickets={myTickets} resolved={resolved} setResolved={setResolved} resCount={resCount} setResCount={setResCount} count={count} removeTask={removeTask}></TaskStatus>
                     </Suspense>   
 
                      

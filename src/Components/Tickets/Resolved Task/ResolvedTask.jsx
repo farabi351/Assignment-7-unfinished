@@ -3,7 +3,7 @@
  const ResolvedTask = ({resolved}) => {
 
 
-   console.log(resolved);
+  // console.log(resolved);
 
  
 

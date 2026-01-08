@@ -10,7 +10,7 @@ const Footer = () => {
 
     //Made it hidden, check----------------------------Bellow
         
-    <footer className='mx-auto bg-black text-white hidden'>
+    <footer className='mx-auto bg-black text-white'>
     
     {/* flex flex-col text-center text-sm gap-15 */}
 

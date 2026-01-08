@@ -6,7 +6,7 @@ import { Suspense, useState } from "react";
 
 
 
-const Banner = (count,setCount) => {
+const Banner = ({count,resCount}) => {
 
 
 
@@ -48,7 +48,7 @@ const Banner = (count,setCount) => {
                      />  */}
         
                       <h1 className='text-white font-semibold text-2xl'>In-Progress</h1>
-                      <p className='text-white text-5xl font-bold'>0</p>
+                      <p className='text-white text-5xl font-bold'> {count-resCount}</p>
                       {/* <button onClick={handleAdd}></button> */}
         
               </div> 
@@ -68,7 +68,7 @@ const Banner = (count,setCount) => {
                     />  
         
                     <h1 className='text-white font-semibold text-2xl'>Resolved</h1>
-                    <p className='text-white text-5xl font-bold'>0 {}</p>
+                    <p className='text-white text-5xl font-bold'>{resCount}</p>
 
                     
                     
